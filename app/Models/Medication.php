@@ -15,7 +15,6 @@ class Medication extends Model
     //Many to Many
     public function patients():BelongsToMany
     {
-        return $this->belongsToMany(Patient::class, 'patient_medications')
-                    ->withPivot('prescribed_date', 'dosage_instruction');
+        return $this->belongsToMany(Patient::class, 'patient_medications');
     }
 }
