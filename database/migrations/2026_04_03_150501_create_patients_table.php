@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('patients', function (Blueprint $table) {
-    $table->id();
-    
-    $table->foreignId('doctor_id')->constrained()->onDelete('cascade');
-    
-    $table->string('first_name');
-    $table->string('last_name');
-    $table->date('birth_date');
-    $table->string('gender');
-    $table->string('contact_number');
-    $table->text('address');
-    $table->timestamps();
-});
+        Schema::create('patients', function (Blueprint $table) {
+            $table->id();
+            
+            $table->foreignId('doctor_id')->constrained()->onDelete('cascade');
+            
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->date('birth_date');
+            $table->string('gender');
+            $table->string('contact_number');
+            $table->text('address');
+            $table->timestamps();
+        });
     }
 
     /**
