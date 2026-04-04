@@ -6,8 +6,8 @@ This system demonstrates proper use of database relationships including One-to-O
 
 ### Database Relationships
 
-| Header 1 | Header 2 |
+| Relationship | Type |
 | -------- | -------- |
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
-
+| Patient ↔ Medical Record | One-to-One |
+| Doctor → Patients | One-to-Many |
+| Patient ↔ Medication | Many-to-Many |
