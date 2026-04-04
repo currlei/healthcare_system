@@ -11,3 +11,40 @@ This system demonstrates proper use of database relationships including One-to-O
 | Patient ↔ Medical Record | One-to-One |
 | Doctor → Patients | One-to-Many |
 | Patient ↔ Medication | Many-to-Many |
+
+### Database Structure
+#### Patient
+- id
+- doctor_id (FK)
+- first_name
+- last_name
+- birth_date
+- gender
+- contact_number
+- address
+
+#### Doctor
+- id
+- first_name
+- last_name
+- specialization
+- contact_number
+- email
+#### Medical Record
+- id
+- patient_id (FK, unique)
+- blood_type
+- allergies
+- medical_history
+- last_visit_date
+
+#### Medication
+- id
+- name
+- description
+- dosage
+
+#### Patient_Medications (Pivot Table)
+- id
+- patient_id (FK)
+- medication_id (FK)
