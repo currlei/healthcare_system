@@ -6,7 +6,7 @@ This system demonstrates proper use of database relationships including One-to-O
 
 
 
-### Database Relationships
+## Database Relationships
 
 | Relationship | Type |
 | -------- | -------- |
@@ -15,7 +15,7 @@ This system demonstrates proper use of database relationships including One-to-O
 | Patient ↔ Medication | Many-to-Many |
  
 
-### Database Structure
+## Database Structure
 #### Patient
 - id
 - doctor_id (FK)
@@ -26,14 +26,14 @@ This system demonstrates proper use of database relationships including One-to-O
 - contact_number
 - address
 
-#### Doctor
+### Doctor
 - id
 - first_name
 - last_name
 - specialization
 - contact_number
 - email
-#### Medical Record
+### Medical Record
 - id
 - patient_id (FK, unique)
 - blood_type
@@ -41,13 +41,13 @@ This system demonstrates proper use of database relationships including One-to-O
 - medical_history
 - last_visit_date
 
-#### Medication
+### Medication
 - id
 - name
 - description
 - dosage
 
-#### Patient_Medications (Pivot Table)
+### Patient_Medications (Pivot Table)
 - id
 - patient_id (FK)
 - medication_id (FK)
