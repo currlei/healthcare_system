@@ -26,14 +26,14 @@ This system demonstrates proper use of database relationships including One-to-O
 - contact_number
 - address
 
-### Doctor
+#### Doctor
 - id
 - first_name
 - last_name
 - specialization
 - contact_number
 - email
-### Medical Record
+#### Medical Record
 - id
 - patient_id (FK, unique)
 - blood_type
@@ -41,13 +41,13 @@ This system demonstrates proper use of database relationships including One-to-O
 - medical_history
 - last_visit_date
 
-### Medication
+#### Medication
 - id
 - name
 - description
 - dosage
 
-### Patient_Medications (Pivot Table)
+#### Patient_Medications (Pivot Table)
 - id
 - patient_id (FK)
 - medication_id (FK)
