@@ -5,52 +5,7 @@ A Laravel 11 application built for the **Middleware + CRUD Integration Activity*
 ---
 
 ## 📊 Entity Relationship Diagram (ERD)
-
-This system utilizes Eloquent relationships (1:1, 1:M, and M:M) to connect healthcare entities.
-
 <img src="images/erd.png" width="600" alt="ERD Diagram">
-
-```mermaid
-erDiagram
-    USERS ||--o{ PATIENTS : "owns/manages"
-    DOCTORS ||--o{ PATIENTS : "assigned to"
-    PATIENTS ||--|| MEDICAL_RECORDS : "has history"
-    PATIENTS }|--|{ MEDICATIONS : "prescribed via pivot"
-
-    USERS {
-        bigint id PK
-        string name
-        string email UK
-        string role "admin | user"
-    }
-    PATIENTS {
-        bigint id PK
-        bigint user_id FK
-        bigint doctor_id FK
-        string first_name
-        string last_name
-        date birth_date
-    }
-    DOCTORS {
-        bigint id PK
-        string last_name
-        string specialization
-        string email
-    }
-    MEDICAL_RECORDS {
-        bigint id PK
-        bigint patient_id FK
-        string blood_type
-        text allergies
-    }
-    MEDICATIONS {
-        bigint id PK
-        string name
-        string dosage
-    }
-```
-
----
 
 ## ✅ Activity Requirements Checklist
 
