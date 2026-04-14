@@ -1,53 +1,44 @@
-# Healthcare System
-This system demonstrates proper use of database relationships including One-to-One, One-to-Many, and Many-to-Many.
+# 🏥 Healthcare Management System (Laravel Activity 3)
 
-## ERD Overview
+A full-featured Healthcare Management System built with **Laravel 11**, designed to demonstrate **CRUD Operations**, **Middleware-based Authentication**, and **Eloquent Relationships**.
 
-<img width="702" height="513" alt="Screenshot 2026-04-04 120229" src="https://github.com/user-attachments/assets/45208c66-5ddc-48bc-b1ed-d4d03de8bf4c" />
+---
+
+## 📊 Entity Relationship Diagram (ERD)
+![Healthcare ERD](public/images/erd.png)
 
 
-## Database Relationships
+## 🚀 Installation & Setup
+Clone the repository:
+git clone https://github.com/currlei/healthcare_system.git
+cd healthcare_system
 
-| Relationship | Type |
-| -------- | -------- |
-| Patient ↔ Medical Record | One-to-One |
-| Doctor → Patients | One-to-Many |
-| Patient ↔ Medication | Many-to-Many |
- 
+Install Dependencies:
+composer install
+npm install
 
-## Database Structure
-#### Patient
-- id
-- doctor_id (FK)
-- first_name
-- last_name
-- birth_date
-- gender
-- contact_number
-- address
+Configure Environment:
+Create a database.sqlite file in the database/ folder.
+Update your .env file:
+DB_CONNECTION=sqlite
 
-#### Doctor
-- id
-- first_name
-- last_name
-- specialization
-- contact_number
-- email
-#### Medical Record
-- id
-- patient_id (FK, unique)
-- blood_type
-- allergies
-- medical_history
-- last_visit_date
+Initialize Database & Seed Data:
+php artisan migrate:fresh --seed
 
-#### Medication
-- id
-- name
-- description
-- dosage
+Compile Assets & Start Server:
+# Run in terminal 1
+npm run dev
+# Run in terminal 2
+php artisan serve
 
-#### Patient_Medications (Pivot Table)
-- id
-- patient_id (FK)
-- medication_id (FK)
+## 🔐 Credentials (Seeded Data)
+Role	Email	Password
+Admin	admin@gmail.com	password123
+User	user@gmail.com	password123
+
+### Final Step: Push to GitHub
+Now that the code is perfect and the README is ready, push everything to your repository:
+
+1.  `git add .`
+2.  `git commit -m "Finalized project with UI, CRUD, and Middleware"`
+3.  `git push origin main` (or `master`)
