@@ -1,4 +1,3 @@
-
 #  Healthcare Management System 
 
 A Laravel 11 application built for the **Middleware + CRUD Integration Activity**. This system manages Patients, Doctors, and Medications while enforcing strict Role-Based Access Control (RBAC) and data ownership.
