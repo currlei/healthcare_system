@@ -13,21 +13,21 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// ALL LOGGED-IN USERS (Access to see Patients, Doctors, and Meds)
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     // Resource Routes
-    Route::resource('patients', PatientController::class);
-    Route::resource('doctors', DoctorController::class);
-    Route::resource('medications', MedicationController::class);
+Route::resource('patients', PatientController::class);
+Route::resource('doctors', DoctorController::class);
+Route::resource('medications', MedicationController::class);
 });
 
-// ADMIN ONLY (Access to manage Users)
+// ADMIN ONLY 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::patch('/users/{user}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
 });
 
 require __DIR__.'/auth.php';
